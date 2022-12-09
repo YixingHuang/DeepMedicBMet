@@ -39,7 +39,7 @@ This repository contains our DeepMedic+ implementation with prior volumes and pr
 For retraining on your own datasets, our preprocessing pipeline is also shared.
 
 #### VSS loss
-The VSS loss is located at [here](./DeepMedicPlus/deepmedic/neuralnet/cost_functions.py).
+The VSS loss is located at [here](./DeepMedicBMet/deepmedic/neuralnet/cost_functions.py).
 
 #### Pretrained models
 Pretrained models are located at 
