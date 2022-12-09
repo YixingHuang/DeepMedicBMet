@@ -30,11 +30,7 @@ def x_entr( p_y_given_x_train, y_gt, weightPerClass, eps=1e-6 ):
 
 #default custom loss
 def iou(p_y_given_x_train, y_gt, eps=1e-5):
-    # Intersection-Over-Union / Jaccard: https://en.wikipedia.org/wiki/Jaccard_index
-    # Analysed in: Nowozin S, Optimal Decisions from Probabilistic Models: the Intersection-over-Union Case, CVPR 2014
-    # First computes IOU per class. Finally averages over the class-ious.
-    # p_y_given_x_train : tensor5 [batchSize, classes, r, c, z]
-    # y: T.itensor4('y'). Dimensions [batchSize, r, c, z]
+    ### This is our VSS loss. But too lazy to change the name. I will do it later. HYX
 
     y_one_hot = tf.one_hot( indices=y_gt, depth=tf.shape(p_y_given_x_train)[1], axis=1, dtype="float32" )
     """
@@ -66,7 +62,8 @@ def iou(p_y_given_x_train, y_gt, eps=1e-5):
     resultTN = 1. - tf.divide(tf.math.reduce_sum(MaxPrbNeg) + 1, tf.math.reduce_sum(PatchesNegOneHot) + 1)
 
     # cost = 1. - ((0.004 * resultTN + 0.996 * resultTP))
-    cost = 1. - ((0.05 * resultTN + 0.95 * resultTP))
+    alpha = 0.95
+    cost = 1. - ((1 - alpha) * resultTN + alpha * resultTP)
 
     return cost
 
