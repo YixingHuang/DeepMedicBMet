@@ -8,7 +8,7 @@ This is the official code repository for our Medical Physics paper "Deep learnin
  
  The backbone of our implementation is from the [original DeepMedic repository](https://github.com/deepmedic/deepmedic). Therefore, almost all the instructions from the original DeepMedic repository still apply to our implementation.
  
- ## Graphical abstract
+ ## Graphical abstract for DeepMedicPlus (with prior path)
 
 ![Graphical abstract](GraphicalAbstract.png)
 
