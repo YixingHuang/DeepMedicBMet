@@ -65,7 +65,7 @@ python deepMedicRun -model ./examples/configFiles/deepMedicPlus/model/modelConfi
 python deepMedicRun -model ./examples/configFiles/deepMedicPlus/model/modelConfig_wide1_deeper.cfg -test ./examples/configFiles/deepMedicPlus/test/testConfig.cfg -load ./examples/output/saved_models/deepMedicWide1.high_precision.model.ckpt -dev cuda0
 ```
 
-For Windows users, you can also use [runCMDs.py](./DeepMedicPlus/runCMDs.py) to run multiple commands.
+For Windows users, you can also use [runCMDs.py](https://github.com/YixingHuang/DeepMedicBMet/blob/main/runCMDs.py) to run multiple commands.
 
 ### Training new models for your own data
 1. Preprocess the data with either your own preprocessing pipeline or [ours](./Brain_MRI_Preprocessing_pipeline/).
