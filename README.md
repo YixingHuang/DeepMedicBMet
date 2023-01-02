@@ -41,19 +41,16 @@ For retraining on your own datasets, our preprocessing pipeline is also shared.
 #### VSS loss
 The VSS loss is located at [here](https://github.com/YixingHuang/DeepMedicBMet/blob/main/deepmedic/neuralnet/cost_functions.py).
 
-#### Pretrained models
-Pretrained models are located at 
+#### Pretrained model
+A pretrained model is located at 
 [./DeepMedicBMet/tree/main/examples/output/saved_models/singlePathTrainingModel](https://github.com/YixingHuang/DeepMedicBMet/tree/main/examples/output/saved_models/singlePathTrainingModel/)
 
-The high sensitivity model is: deepMedicWide1.high_sensitivity.model.ckpt  
-The high precision model is: deepMedicWide1.high_precision.model.ckpt
+This model is achieved with the alpha value set to 0.95 in our VSS loss function, which has a trade-off between sensitivity and prevision from our point of view. It achieves a sensitivity of 0.914, precision of 0.830. On average, there are about 0.5 false positive metastases for each patient.
 
 #### Data structure for inference/test
-Put the main test volume paths in [.\examples\configFiles\deepMedicPlus\test\testChannels_t1c.cfg](./DeepMedicPlus/examples/configFiles/deepMedicPlus/test/testChannels_t1c.cfg)  
+Put the main test volume paths in [DeepMedicBMet/examples/configFiles/deepMedicBM/test/testChannels_t1c.cfg](https://github.com/YixingHuang/DeepMedicBMet/blob/main/examples/configFiles/deepMedicBM/test/testChannels_t1c.cfg) 
 
-put the corresponding prior volume paths in [.\examples\configFiles\deepMedicPlus\test\testPriorChannels_t1c.cfg](./DeepMedicPlus/examples/configFiles/deepMedicPlus/test/testPriorChannels_t1c.cfg)
-
-If **no prior volume**, simply put the path to a volume with Zero values only. The zero-value volume we used is shared here named "!!AAZero_Volume.nii.gz".
+put the corresponding label paths, ROI mask paths, and patient names in testGtLabels.cfg, testRoiMasks.cfg, and testNamesOfPredictions.cfg respectively in that folder.
 
 #### Data preprocessing pipeline  
 In order to directly apply our pretrained models, your test data should have the same [preprocessing pipeline](./Brain_MRI_Preprocessing_pipeline/) as ours.
@@ -72,21 +69,20 @@ For Windows users, you can also use [runCMDs.py](./DeepMedicPlus/runCMDs.py) to 
 
 ### Training new models for your own data
 1. Preprocess the data with either your own preprocessing pipeline or [ours](./Brain_MRI_Preprocessing_pipeline/).
-2. Put your training data paths in the config files of [.\examples\configFiles\deepMedicPlus\train](./DeepMedicPlus/examples/configFiles/deepMedicPlus/train/). Put the volumes, labels, brain masks, and prior volumes into trainChannels_t1c.cfg,  trainGtLabels.cfg,  trainRoiMasks.cfg, and trainPriorChannels_t1c.cfg, respectively.
-3. In [trainConfigwide.cfg](./DeepMedicPlus/examples/configFiles/DeepMedicPlus/train/trainConfigwide.cfg), Line 62: please add a new numberOfEpochs value.
-5. Change the $\alpha$ parameter mannualy in [cost_functions.py](./DeepMedicPlus/deepmedic/neuralnet/cost_functions.py), for example, 0.995 for high sensitivity and 0.5 for high precision. (Sorry that haven't made it available in the args input yet). 
-7. Run the command for training
+2. Put your training data paths in the config files of [./DeepMedicBMet/tree/main/examples/configFiles/deepMedicBM/train](https://github.com/YixingHuang/DeepMedicBMet/tree/main/examples/configFiles/deepMedicBM/train). Put the volumes, labels, and  brain masks into trainChannels_t1cAll.cfg,  trainGtLabelsAll.cfg, and trainRoiMasksAll.cfg, respectively.
+3. In [trainConfigwideAll.cfg](https://github.com/YixingHuang/DeepMedicBMet/blob/main/examples/configFiles/deepMedicBM/train/trainConfigwideAll.cfg), Line 62: please add a new numberOfEpochs value.
+4. Run the command for training
 ```python
-python deepMedicRun -model ./examples/configFiles/deepMedicPlus/model/modelConfig_wide1_deeper.cfg -train ./examples/configFiles/deepMedicPlus/train/trainConfigwide.cfg  -dev cuda0
+python deepMedicRun -model ./examples/configFiles/deepMedicBM/model/modelConfig_wide1_deeper.cfg  -train ./examples/configFiles/deepMedicBM/train/trainConfigwideAll.cfg  -dev cuda0
 ```
-8. For fast training, you can fine tune our pretrained model with your own training data with the following command:
+5. For fast training, you can fine tune our pretrained model with your own training data with the following command:
 ```python
-python deepMedicRun -model ./examples/configFiles/deepMedicPlus/model/modelConfig_wide1_deeper.cfg -train ./examples/configFiles/deepMedicPlus/train/trainConfigwide.cfg  -load ./examples/output/saved_models/deepMedicWide1.high_sensitivity.model.ckpt -dev cuda0
+python deepMedicRun -model ./examples/configFiles/deepMedicBM/model/modelConfig_wide1_deeper.cfg  -train ./examples/configFiles/deepMedicBM/train/trainConfigwideAll.cfg  -load  ./examples/output/saved_models/singlePathTrainingModel/deepMedicWide1.singlePathTrainingModel.final.model.ckpt -dev cuda0
 ```
 ```python
 python deepMedicRun -model ./examples/configFiles/deepMedicPlus/model/modelConfig_wide1_deeper.cfg -train ./examples/configFiles/deepMedicPlus/train/trainConfigwide.cfg  -load ./examples/output/saved_models/deepMedicWide1.high_precision.model.ckpt -dev cuda0
 ```
-   In [trainConfigwide.cfg](./DeepMedicPlus/examples/configFiles/DeepMedicPlus/train/trainConfigwide.cfg), Line 62: please add a new numberOfEpochs value,  for example, 80, then additional 30 epochs will be trained.
+   In [trainConfigwideAll.cfg](https://github.com/YixingHuang/DeepMedicBMet/blob/main/examples/configFiles/deepMedicBM/train/trainConfigwideAll.cfg), Line 62: please add a new numberOfEpochs value,  for example, 90, then additional 30 epochs will be trained.
    
 ## Our System Environment
 numpy version:1.19.5    it seems that there is compatibility problems with the latest numpy versions.
