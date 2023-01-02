@@ -43,7 +43,7 @@ The VSS loss is located at [here](https://github.com/YixingHuang/DeepMedicBMet/b
 
 #### Pretrained models
 Pretrained models are located at 
-[DeepMedicBMet/tree/main/examples/output/saved_models/singlePathTrainingModel](./DeepMedicBMet/tree/main/examples/output/saved_models/singlePathTrainingModel/)
+[./DeepMedicBMet/tree/main/examples/output/saved_models/singlePathTrainingModel](https://github.com/YixingHuang/DeepMedicBMet/tree/main/examples/output/saved_models/singlePathTrainingModel/)
 
 The high sensitivity model is: deepMedicWide1.high_sensitivity.model.ckpt  
 The high precision model is: deepMedicWide1.high_precision.model.ckpt
