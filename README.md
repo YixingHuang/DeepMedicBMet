@@ -4,7 +4,7 @@ documentation/README.md
 ## Deep learning for brain metastasis detection and segmentation in longitudinal MRI data
 This is the official code repository for our Medical Physics paper "Deep learning for brain metastasis detection and segmentation in longitudinal MRI data": https://doi.org/10.1002/mp.15863
 
-## This is the original DeepMedic with our proposed VSS loss for brain metastasis identification without prior volumes (i.e., without the additional prior path in [DeepMedicPlus](https://github.com/YixingHuang/DeepMedicPlus)).
+## This is the original DeepMedic with our proposed VSS loss for brain metastasis identification without prior volumes (the version with the additional prior path is in [DeepMedicPlus](https://github.com/YixingHuang/DeepMedicPlus)).
  
  The backbone of our implementation is from the [original DeepMedic repository](https://github.com/deepmedic/deepmedic). Therefore, almost all the instructions from the original DeepMedic repository still apply to our implementation.
  
