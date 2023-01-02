@@ -35,7 +35,7 @@ year = {2022}
 ```
 
 ## Contents
-This repository contains our DeepMedic+ implementation with prior volumes and proposed volume-level sensitivity-specificity (VSS) loss, as well as the pretrained high-sensitivity and high-precision model weights.
+This repository contains our DeepMedic implementation for brain metastasis auto segmentation with our proposed volume-level sensitivity-specificity (VSS) loss.
 For retraining on your own datasets, our preprocessing pipeline is also shared.
 
 #### VSS loss
@@ -43,7 +43,7 @@ The VSS loss is located at [here](https://github.com/YixingHuang/DeepMedicBMet/b
 
 #### Pretrained models
 Pretrained models are located at 
-[DeepMedicDualPath\examples\output\saved_models\pretrainedModels](./DeepMedicPlus/examples/output/saved_models/pretrainedModels/)
+[DeepMedicBMet/tree/main/examples/output/saved_models/singlePathTrainingModel](./DeepMedicBMet/tree/main/examples/output/saved_models/singlePathTrainingModel/)
 
 The high sensitivity model is: deepMedicWide1.high_sensitivity.model.ckpt  
 The high precision model is: deepMedicWide1.high_precision.model.ckpt
