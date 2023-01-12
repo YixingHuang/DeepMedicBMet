@@ -208,3 +208,13 @@ venv.bak/
 .idea/DeepMedicBMet.iml
 
 .idea/
+examples/configFiles/deepMedicBM/test2/testChannels_t1c.cfg
+examples/configFiles/deepMedicBM/test2/testGtLabels.cfg
+examples/configFiles/deepMedicBM/test2/testNamesOfPredictions.cfg
+examples/configFiles/deepMedicBM/test2/testRoiMasks.cfg
+examples/configFiles/deepMedicBM/train2/trainChannels_t1cAll.cfg
+examples/configFiles/deepMedicBM/train2/trainGtLabelsAll.cfg
+examples/configFiles/deepMedicBM/train2/trainRoiMasksAll.cfg
+examples/output/predictions/SinglePathTestResults/predictions/Schmidt_Karin_1007025820_20130930_ProbMapClass0.nii.gz
+examples/output/predictions/SinglePathTestResults/predictions/Schmidt_Karin_1007025820_20130930_ProbMapClass1.nii.gz
+examples/output/predictions/SinglePathTestResults/predictions/Schmidt_Karin_1007025820_20130930_Segm.nii.gz
