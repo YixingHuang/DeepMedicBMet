@@ -59,10 +59,7 @@ Otherwise, the performance of using our pretrained models will be suboptimal, du
 
 #### Command line for inference/test with pretrained models
 ```python
-python deepMedicRun -model ./examples/configFiles/deepMedicPlus/model/modelConfig_wide1_deeper.cfg -test ./examples/configFiles/deepMedicPlus/test/testConfig.cfg -load ./examples/output/saved_models/deepMedicWide1.high_sensitivity.model.ckpt -dev cuda0
-```
-```python
-python deepMedicRun -model ./examples/configFiles/deepMedicPlus/model/modelConfig_wide1_deeper.cfg -test ./examples/configFiles/deepMedicPlus/test/testConfig.cfg -load ./examples/output/saved_models/deepMedicWide1.high_precision.model.ckpt -dev cuda0
+python deepMedicRun -model ./examples/configFiles/deepMedicBM/model/modelConfig_wide1_deeper.cfg -test ./examples/configFiles/deepMedicBM/test/testConfig.cfg -load  ./examples/output/saved_models/singlePathTrainingModel/deepMedicWide1.singlePathTrainingModel.final.model.ckpt -dev cuda0
 ```
 
 For Windows users, you can also use [runCMDs.py](https://github.com/YixingHuang/DeepMedicBMet/blob/main/runCMDs.py) to run multiple commands.
