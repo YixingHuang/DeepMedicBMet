@@ -1,2 +1,0 @@
-model_checkpoint_path: ".\\examples\\output/saved_models//singlePathTrainingModel//deepMedicWide1.singlePathTrainingModel.final.model.ckpt"
-all_model_checkpoint_paths: ".\\examples\\output/saved_models//singlePathTrainingModel//deepMedicWide1.singlePathTrainingModel.final.model.ckpt"
