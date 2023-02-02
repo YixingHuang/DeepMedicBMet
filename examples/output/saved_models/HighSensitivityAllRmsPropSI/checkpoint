@@ -1,2 +1,0 @@
-model_checkpoint_path: "C:\\MachineLearning\\DeepMedicBMet\\examples\\output/saved_models//HighSensitivityAllRmsPropSI//deepMedicWide1.HighSensitivityAllRmsPropSI.final.model.ckpt"
-all_model_checkpoint_paths: "C:\\MachineLearning\\DeepMedicBMet\\examples\\output/saved_models//HighSensitivityAllRmsPropSI//deepMedicWide1.HighSensitivityAllRmsPropSI.final.model.ckpt"
