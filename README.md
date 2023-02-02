@@ -42,7 +42,8 @@ For retraining on your own datasets, our preprocessing pipeline is also shared.
 The VSS loss is located at [here](https://github.com/YixingHuang/DeepMedicBMet/blob/main/deepmedic/neuralnet/cost_functions.py).
 
 #### Pretrained model
-A pretrained model is located at 
+A pretrained model is available upon request.
+Put the pretrained model at the following folder:
 [./DeepMedicBMet/tree/main/examples/output/saved_models/singlePathTrainingModel](https://github.com/YixingHuang/DeepMedicBMet/tree/main/examples/output/saved_models/singlePathTrainingModel/)
 
 This model is achieved with the alpha value set to 0.95 in our VSS loss function, which has a trade-off between sensitivity and prevision from our point of view. It achieves a sensitivity of 0.914, precision of 0.830. On average, there are about 0.5 false positive metastases for each patient.
