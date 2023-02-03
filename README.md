@@ -42,7 +42,7 @@ For retraining on your own datasets, our preprocessing pipeline is also shared.
 The VSS loss is located at [here](https://github.com/YixingHuang/DeepMedicBMet/blob/main/deepmedic/neuralnet/cost_functions.py).
 
 #### Pretrained model
-A pretrained model is available upon request.
+A pretrained model is available upon request for multicenter collaboration.
 Put the pretrained model at the following folder:
 [./DeepMedicBMet/tree/main/examples/output/saved_models/singlePathTrainingModel](https://github.com/YixingHuang/DeepMedicBMet/tree/main/examples/output/saved_models/singlePathTrainingModel/)
 
