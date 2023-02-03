@@ -12,7 +12,8 @@ __pycache__/
 
 *.so
 
-
+#saved modles
+examples/output/
 
 # Distribution / packaging
 
